@@ -15,8 +15,8 @@ def div(num1,num2):
    return div
 
 
-num1=input("Enter number 1")
-num2=input("Enter number2")
+num1=int(input("Enter number 1"))
+num2=int(input("Enter number2"))
 
 print("The sub of 2 number")
 print(sub(num1,num2))
