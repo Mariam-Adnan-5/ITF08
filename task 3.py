@@ -18,6 +18,9 @@ def div(num1,num2):
 num1=int(input("Enter number 1"))
 num2=int(input("Enter number2"))
 
+print("The add of 2 number")
+print(add(num1,num2))
+
 print("The sub of 2 number")
 print(sub(num1,num2))
 
