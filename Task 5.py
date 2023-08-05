@@ -1,7 +1,7 @@
 def test(area):
  if area>=10:
      print("The Area is huge")
- elif area<10:
+ elif   0<area<10:
      print("The Area is small")
  else :
      print("invalid input")
