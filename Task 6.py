@@ -54,7 +54,7 @@ while True:
      7-Division
      8-Exsit""")
     while True:
-        choice = int(input("Enter your choice from{1 ,4}"))
+        choice = int(input("Enter your choice from{1 ,8}"))
         if choice == 1:
             Tringle()
             break
