@@ -17,6 +17,7 @@ for i in range(students_numbers):
     maximum.append(max(grads))
     minimum.append(min(grads))
     grads.clear()
+    sum=0
 for i in range(students_numbers):
     print(f"Student{i+1}\n Avarge={avarge[i]}\n Min={minimum[i]}\nMax={maximum[i]}")
 
