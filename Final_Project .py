@@ -84,9 +84,9 @@ class Student(Course):
                     sum += i.get_course_mark()
                     count += 1
         return sum / count
-#name=input("Enter your name")
-#submission_date=input("Enter submission_date")
-#print(f"name is :{name}\nsubmission_date is :{submission_date}")
+name=input("Enter your name")
+submission_date=input("Enter submission_date")
+print(f"name is :{name}\nsubmission_date is :{submission_date}")
 students_list =load_data()
 while True:
     selection=int(input(""" 1-Add New Student\n 2-Delete Student\n 3-Display Student\n 4-Get Student average
