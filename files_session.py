@@ -12,8 +12,11 @@ def load_data(data=[]):
 
 def update_data(data=[]):
     with open("Finall project.txt","a")as file:
-        file.writelines(str(data)+"\n")
+        for items in data:
+            file.writelines(str(items)+"\n")
         file.close()
+
+
 
 
 

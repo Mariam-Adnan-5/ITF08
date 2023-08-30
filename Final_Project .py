@@ -113,32 +113,47 @@ while True:
              print("Invalid Input")
         student=Student(student_name,student_age,student_number)
         students_list.append(student)
-        update_data(student.dict_list())
+        update_data(students_list)
 
 
         print("Student Added Successfully -_-")
     elif selection==2:
-        student_number = int(input("Input Student number"))
+        while True:
+            try:
+                student_number = int(input("Input Student number"))
+                break
+            except:
+                print("Invalid input")
         for i in students_list:
           if student_number == i.get_student_number():
               students_list.remove(i)
-              update_data(i.dict_list())
+              update_data(students_list)
               print("Student Deleted Successfully -_-")
               break
         else:
             print("Student Not exist")
     elif selection==3:
-        student_number = int(input("Input Student number"))
-        for i in students_list:
-          if student_number == i.get_student_number():
-            print(  i.get_student_details())
-            i.student_course()
-            break
-        else:
+         while True:
+            try:
+                student_number = int(input("Input Student number"))
+                break
+            except:
+                print("Invalid input")
+         for i in students_list:
+           if student_number == i.get_student_number():
+             print(  i.get_student_details())
+             i.student_course()
+             break
+         else:
             print("Student Not exist")
 
     elif selection==4:
-        student_number = int(input("Input Student number"))
+        while True:
+            try:
+                student_number = int(input("Input Student number"))
+                break
+            except:
+                print("Invalid input")
         for i in students_list:
             if student_number == i.get_student_number():
              print( i.mark_avarge(i))
@@ -146,7 +161,12 @@ while True:
             print("Student Not exist")
 
     elif selection==5:
-        student_number = int(input("Input Student number"))
+        while True:
+            try:
+                student_number = int(input("Input Student number"))
+                break
+            except:
+                print("Invalid input")
         for i in students_list:
             if student_number == i.get_student_number():
              i.new_course()
@@ -159,7 +179,6 @@ while True:
         exit()
     else :
         print("Invalid Input")
-
 
 
 
