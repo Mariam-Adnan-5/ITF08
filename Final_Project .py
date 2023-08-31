@@ -1,5 +1,7 @@
 import random
-from files_session import load_data, update_data
+
+
+from files_session import load_data
 class Course:
     def __init__(self,course_name,course_mark):
         self.__course_name=course_name
@@ -56,13 +58,6 @@ class Student(Course):
                   # "course_list":self.
         }
         return students
-    def dict_list(self):
-        students = {"student_number": self.__student_number,
-                    "student_id": self.__student_id,
-                    "student_name": self.__student_name,
-                    "student_age": self.__student_age}
-        result_list=list(students.values())
-        return result_list
 
     def new_course(self):
      with open("Finall project.txt", "r") as file:
@@ -84,13 +79,25 @@ class Student(Course):
                     sum += i.get_course_mark()
                     count += 1
         return sum / count
-name=input("Enter your name")
-submission_date=input("Enter submission_date")
-print(f"name is :{name}\nsubmission_date is :{submission_date}")
-students_list =load_data()
+def update_data(data=[]):
+    data_str=[]
+    for index in data:
+      index=f"{index.get_student_number()}|{index.get_student_id()}|{index.get_student_name()}|{index.get_student_age()}\n"
+
+      data_str.append(index)
+    with open("Finall project.txt", "w") as file:
+            file.writelines(data_str)
+            file.close()
+print(f"name is :Mariam Adnan Thabet\nsubmission_date is :30_8_2023")
+students_list =[]
 while True:
-    selection=int(input(""" 1-Add New Student\n 2-Delete Student\n 3-Display Student\n 4-Get Student average
+    while True:
+        try:
+           selection=int(input(""" 1-Add New Student\n 2-Delete Student\n 3-Display Student\n 4-Get Student average
   5-Add course with student with mark\n 6-Exsit.\n Enter your choice """))
+           break
+        except:
+            print("Invalid input")
     if selection==1:
         student_name=input("Enter Student full name")
         while True:
@@ -114,8 +121,6 @@ while True:
         student=Student(student_name,student_age,student_number)
         students_list.append(student)
         update_data(students_list)
-
-
         print("Student Added Successfully -_-")
     elif selection==2:
         while True:
